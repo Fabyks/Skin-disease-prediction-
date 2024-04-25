@@ -1,0 +1,114 @@
+<header class="header_section long_section px-0">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="">
+            <span><b style="color:white">
+                    Skin Disease Classification
+                </b>
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'landing' %}"><b style="color: aliceblue"> <span
+                                    class="sr-only">(current)</span></b></a>
+                    </li>
+                    <li>
+                        <span>
+                            <b style="color: aliceblue">
+                                {{ request.user.email }}
+                            </b>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="quote_btn-container">
+                {% if request.user.user_type == '2' %}
+
+                <a href="{% url 'skin_disease_prediction' %}">
+                    <span>
+                        <b style="color:white">
+                            Predict Skin Disease
+                        </b>
+                    </span>
+                </a>
+
+                <a href="{% url 'view_appointments' %}">
+                    <span>
+                        <b style="color:white">
+                            Doctor Suggestions
+                        </b>
+                    </span>
+                </a>
+
+                <a href="{% url 'doLogout' %}">
+                    <span>
+                        <b style="color:white">
+                            Logout
+                        </b>
+                    </span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+
+                {% elif request.user.user_type == '3' %}
+
+                <a href="{% url 'doctor_view_appointments' %}">
+                    <span>
+                        <b style="color:white">
+                            Suggestions
+                        </b>
+                    </span>
+                </a>
+
+                <a href="{% url 'doLogout' %}">
+                    <span>
+                        <b style="color:red">
+                            Logout
+                        </b>
+                    </span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+
+                {% else %}
+
+
+                <a href="{% url 'registration' %}">
+                    <span>
+                        <b style="color:white">
+                            Create User Account
+                        </b>
+                    </span>
+                </a>
+
+                <a href="{% url 'register_doctor' %}">
+                    <span>
+                        <b style="color:white">
+                            Create Doctor Account
+                        </b>
+                    </span>
+                </a>
+
+                <a href="{% url 'login' %}">
+                    <span>
+                        <b style="color:green">
+                            Login
+                        </b>
+                    </span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+
+                {% endif %}
+
+
+                <form class="form-inline">
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>

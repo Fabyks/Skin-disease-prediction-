@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="slider_section long_section">
+  <div id="customCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="detail-box">
+                <h1>
+                  Have Skin Disease? <br>
+                  Check with US
+                </h1>
+                <br>
+                <div class="btn-box">
+                  <a href="{% url 'skin_disease_prediction' %}" class="btn btn-sm btn-primary">Get predictions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
